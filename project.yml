@@ -1,0 +1,36 @@
+name: BLEScanner
+options:
+  bundleIdPrefix: com.ahmedthabit
+  deploymentTarget:
+    iOS: "16.0"
+packages:
+  BLECore:
+    path: BLECore
+targets:
+  BLEScanner:
+    type: application
+    platform: iOS
+    sources:
+      - App
+    dependencies:
+      - package: BLECore
+    info:
+      path: Config/Info.plist
+      properties:
+        CFBundleDisplayName: BLE Scanner
+        CFBundleShortVersionString: "0.1.0"
+        CFBundleVersion: "1"
+        UILaunchScreen: {}
+        NSBluetoothAlwaysUsageDescription: This app scans for and connects to Bluetooth Low Energy sensors.
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ahmedthabit.blescanner
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  BLEScanner:
+    build:
+      targets:
+        BLEScanner: all
